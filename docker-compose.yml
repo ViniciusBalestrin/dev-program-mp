@@ -12,6 +12,7 @@ services:
         working_dir: /var/www/
         volumes:
             - ./:/var/www
+            - /var/www/certificados/balestrin.dev/:/var/www/certificados/balestrin.dev/
         depends_on: 
             - redis
             - queue
@@ -23,9 +24,11 @@ services:
         restart: unless-stopped
         ports: 
             - 80:80
+            - 443:443
         volumes: 
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
+            - /var/www/certificados/balestrin.dev/:/var/www/certificados/balestrin.dev/
         networks: 
             - devprogram
 
@@ -62,8 +65,11 @@ services:
 
     redis:
         image: redis:latest
+        restart: always
         networks: 
             - devprogram
+        ports:
+            - "6379:6379"
 
 networks: 
     devprogram:

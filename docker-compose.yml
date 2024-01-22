@@ -2,9 +2,9 @@ version: "3.7"
 services:
     app_mp:
         build: 
-            args: 
-                user: vinicius
-                uid: 1000
+            # args: 
+            #     user: vinicius
+            #     uid: 1000
             context: ./
             dockerfile: Dockerfile
         image: laravel-app
@@ -23,8 +23,8 @@ services:
         image: nginx:alpine
         restart: unless-stopped
         ports: 
-            - 80:80
-            - 443:443
+            - 81:80
+            - 454:443
         volumes: 
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
@@ -49,9 +49,9 @@ services:
 
     queue:
         build: 
-            args: 
-                user: vinicius
-                uid: 1000
+            # args: 
+            #     user: vinicius
+            #     uid: 1000
             context: ./
             dockerfile: Dockerfile
         restart: unless-stopped

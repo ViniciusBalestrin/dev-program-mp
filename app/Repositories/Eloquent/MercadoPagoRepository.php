@@ -51,9 +51,9 @@ class MercadoPagoRepository implements MercadoPagoInterface
               ],
               // "notification_url" => "mp.balestrin.dev.mp/webhook/preference",
               "back_urls" => [
-                "success" => "mp.balestrin.dev.mp/venda/back-url",
-                "pending" => "mp.balestrin.dev.mp/venda/back-url",
-                "failure" => "mp.balestrin.dev.mp/venda/back-url",
+                "success" => "mp.balestrin.dev/venda/back-url",
+                "pending" => "mp.balestrin.dev/venda/back-url",
+                "failure" => "mp.balestrin.dev/venda/back-url",
               ],
               "auto_return" => "all",
               "payment_methods" => [
